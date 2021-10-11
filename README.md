@@ -1,2 +1,1 @@
-# test-bsale
-This is the frontend part of bsale test
+This is the frontend part of the BSALE test, this will communicate with the api i created hosted in heroku to work.
