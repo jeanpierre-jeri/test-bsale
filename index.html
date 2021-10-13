@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +20,13 @@
 <body class="bg-gray-300">
     <header class="text-gray-600 body-font bg-gray-200">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a href="./index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <a onclick="loadProducts()" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 cursor-pointer">
             <span class="ml-3 text-xl">BSALE</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <ul class="flex flex-col lg:flex-row list-none ml-auto">
               <li class="nav-item">
-                <form class="bg-white flex items-center rounded-full" method="POST" id="form">
+                <form class="bg-white flex items-center rounded-full" id="form">
                     <input type="text" class="rounded-l-full w-full py-1 px-6 text-gray-700 leading-tight focus:outline-none bg-white" id="search" name="search">
                     <div class="p-2">
                       <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none flex items-center justify-center w-8 h-8"><i class="fas fa-search"></i></button>
@@ -39,7 +38,6 @@
                 <a
                   id="cart"
                   class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75"
-                  href="#"
                 >
                   <i class="fas fa-shopping-cart text-lg leading-lg opacity-75"> </i>
                 </a>
@@ -50,7 +48,8 @@
         </div>
       </header>
       <main class="container mx-auto p-5">
-        <div id="products" class="flex gap-5 flex-wrap">
+        <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 place-items-center">
+          
         </div>
         <div id="loading">Cargando...</div>
       </main>
@@ -106,113 +105,4 @@
       <script src="script.js"></script>
       <script src="shoppingCart.js"></script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Document</title>
-    <style>
-        .modal {
-      transition: opacity 0.25s ease;
-    }
-    body.modal-active {
-      overflow-x: hidden;
-      overflow-y: visible !important;
-    }
-    </style>
-</head>
-<body class="bg-gray-300">
-    <header class="text-gray-600 body-font bg-gray-200">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a href="./index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <span class="ml-3 text-xl">BSALE</span>
-          </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <ul class="flex flex-col lg:flex-row list-none ml-auto">
-              <li class="nav-item">
-                <form class="bg-white flex items-center rounded-full" method="POST" id="form">
-                    <input type="text" class="rounded-l-full w-full py-1 px-6 text-gray-700 leading-tight focus:outline-none bg-white" id="search" name="search">
-                    <div class="p-2">
-                      <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none flex items-center justify-center w-8 h-8"><i class="fas fa-search"></i></button>
-                      
-                    </div>
-                </form>
-              </li>
-              <li class="nav-item  flex w-14 h-14 flex items-center justify-center relative">
-                <a
-                  id="cart"
-                  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75"
-                  href="#"
-                >
-                  <i class="fas fa-shopping-cart text-lg leading-lg opacity-75"> </i>
-                </a>
-                <span id="counter" class="text-xs select-none absolute bg-red-400 w-5 h-5 flex rounded-full items-center justify-center top-1 right-1"></span>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <main class="container mx-auto p-5">
-        <div id="products" class="flex gap-5 flex-wrap">
-        </div>
-        <div id="loading">Cargando...</div>
-      </main>
-      <div id="modal" class="opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
-        <div id="modalOverlay" class="absolute w-full h-full bg-gray-900 opacity-50"></div>
-        
-        <div class="modal-container bg-white w-11/12 md:max-w-full mx-auto rounded shadow-lg z-50 overflow-y-auto">
-          
-          <!-- Add margin if you want to see some of the overlay behind the modal-->
-          <div class="modal-content py-4 text-left px-6">
-            <!--Title-->
-            <div class="flex justify-between items-center pb-3">
-              <p class="text-2xl font-bold">Carrito</p>
-              <div id="modalClose" class="cursor-pointer z-50">
-                <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                  <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                </svg>
-              </div>
-            </div>
-    
-            <!--Body-->
-            <div class="my-5 mx-auto max-h-96 overflow-auto">
-              <table id="cartItems" class="w-full border-collapse">
-                <tr>
-                  <th class="text-left p-1.5 text-white bg-blue-400 rounded-l">Producto</th>
-                  <th class="text-left p-1.5 text-white bg-blue-400">Cantidad</th>
-                  <th class="text-right p-1.5 text-white bg-blue-400 rounded-r">Subtotal</th>
-                </tr>
-              </table>
-            </div>
-            <div class="flex justify-end">
-              <table class="border-t-2 border-blue-400 w-full max-w-xs">
-                <tr class="text-right">
-                  <td class="text-left">Subtotal</td>
-                  <td id="subTotal"></td>
-                </tr>
-                <tr class="text-right">
-                  <td class="text-left">Total</td>
-                  <td id="total"></td>
-                </tr>
-              </table>
-            </div>
-    
-            <!--Footer-->
-            <div class="flex justify-end pt-2">
-              <button class="px-4 bg-blue-500 p-3 rounded-lg text-white hover:bg-blue-600">Pagar</button>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      
-      <script src="script.js"></script>
-      <script src="shoppingCart.js"></script>
-</body>
->>>>>>> b47f4a0 (first commit of frontend)
 </html>
