@@ -31,8 +31,8 @@ const categoryFilterForm = `
 
 const getProducts = async () => {
 
-        // return (await (await fetch('https://backend-bsale-test.herokuapp.com/api')).json())  
-        return (await (await fetch('http://localhost:3000/api')).json())  
+        return (await (await fetch('https://backend-bsale-test.herokuapp.com/api')).json())  
+        
 }
 
 const itemPage = document.getElementById('products')
@@ -94,8 +94,8 @@ form.addEventListener('submit', async e => {
         search: search.value
     }
 
-    // const response = await fetch('https://backend-bsale-test.herokuapp.com/api', {
-    const response = await fetch('http://localhost:3000/api', {
+    const response = await fetch('https://backend-bsale-test.herokuapp.com/api', {
+    
         method: 'POST',
         headers,
         body: JSON.stringify(data),
@@ -146,7 +146,7 @@ const filter = async (category) => {
         category
     }
 
-    const response = await fetch('http://localhost:3000/api', {
+    const response = await fetch('https://backend-bsale-test.herokuapp.com/api', {
         method: 'POST',
         headers,
         body: JSON.stringify(data),
